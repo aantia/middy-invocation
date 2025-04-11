@@ -1,38 +1,28 @@
-let evt, ctx
+// these are global as they're in the top-level scope
+let evt, ctx;
 
 const event = () => {
-    return evt
+    return evt;
 }
 
 const context = () => {
-    return ctx
+    return ctx;
 }
 
 const invocationMiddleware = (opts = {}) => {
     const invocationMiddlewareBefore = async (request) => {
-        evt = request.event
-        ctx = {
-            functionVersion: request.context.functionVersion,
-            functionName: request.context.functionName,
-            memoryLimitInMB: request.context.memoryLimitInMB,
-            logGroupName: request.context.logGroupName,
-            logStreamName: request.context.logStreamName,
-            clientContext: request.context.clientContext,
-            identity: request.context.identity,
-            invokedFunctionArn: request.context.invokedFunctionArn,
-            awsRequestId: request.context.awsRequestId,
-            getRemainingTimeInMillis: request.context.getRemainingTimeInMillis,
-        }
+        evt = request.event;
+        ctx = request.context;
     }
 
     const invocationMiddlewareAfter = async (request) => {
-        evt = null
-        ctx = null
+        evt = null;
+        ctx = null;
     }
 
     const invocationMiddlewareOnError = async (request) => {
-        evt = null
-        ctx = null
+        evt = null;
+        ctx = null;
     }
 
     return {
