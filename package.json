@@ -14,12 +14,7 @@
     "lambda"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "prettier --config .prettierrc.json --write ./src/*.js",
-    "release-patch": "release-it --ci --git.commit --git.push --git.tag --git.tagName='v${version}' --github.release --no-git.requireCleanWorkingDir --no-git.requireUpstream --npm.publish --npm.skipChecks",
-    "release-minor": "release-it minor --ci --git.commit --git.push --git.tag --git.tagName='v${version}' --github.release --no-git.requireCleanWorkingDir --no-git.requireUpstream --npm.publish --npm.skipChecks",
-    "release-major": "release-it major --ci --git.commit --git.push --git.tag --git.tagName='v${version}' --github.release --no-git.requireCleanWorkingDir --no-git.requireUpstream --npm.publish --npm.skipChecks",
-    "release-minor-without-tag": "release-it minor --ci --no-git.commit --no-git.push --no-git.tag --no-git.tagName='v${version}' --no-github.release --no-git.requireCleanWorkingDir --no-git.requireUpstream --npm.publish --npm.skipChecks"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "src/",
@@ -28,11 +23,9 @@
     "LICENSE"
   ],
   "peerDependencies": {
-    "@middy/core": "^2.5.3"
+    "@middy/core": "^6.0.0"
   },
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.85",
-    "prettier": "^2.2.1",
-    "release-it": "^14.5.0"
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.149"
   }
 }
